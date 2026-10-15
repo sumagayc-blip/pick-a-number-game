@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Question 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-music="kundiman">
+
+<div class="question-page">
+
+    <div class="question-number">
+        QUESTION #02
+    </div>
+
+    <h1>🔥 YOUR CHALLENGE</h1>
+
+    <div class="question-box">
+
+        <h2>
+            What does CSS stand for?
+        </h2>
+
+        <input
+            type="text"
+            id="answer"
+            class="answer-input"
+            placeholder="Type your answer..."
+        >
+
+        <br>
+
+        <button
+            class="submit-btn"
+            onclick="checkAnswer()">
+
+            🚀 SUBMIT ANSWER
+
+        </button>
+
+        <p id="result" class="result"></p>
+
+        <button
+            id="tryAgainBtn"
+            class="try-again-btn"
+            onclick="tryAgain()"
+            style="display: none;">
+
+            🔄 TRY AGAIN
+
+        </button>
+
+    </div>
+
+
+
+    <button id="musicBtn" class="music-btn" type="button" onclick="toggleMusic()" aria-pressed="false">▶ MUSIC</button>
+
+</div>
+
+
+<script>
+
+function checkAnswer() {
+
+    let input =
+        document.getElementById("answer");
+
+    let answer =
+        input.value.toLowerCase().trim();
+
+    if (answer === "cascading style sheets") {
+
+        document.getElementById("result").innerHTML =
+            "🎉 CORRECT! +10 POINTS";
+
+        document.getElementById("tryAgainBtn")
+            .style.display = "none";
+
+        input.disabled = true;
+
+        saveScore();
+
+        markUsed();
+
+    } else {
+
+        document.getElementById("result").innerHTML =
+            "❌ Incorrect!";
+
+        document.getElementById("tryAgainBtn")
+            .style.display = "inline-block";
+
+    }
+
+}
+
+
+function tryAgain() {
+
+    document.getElementById("answer").value = "";
+
+    document.getElementById("result").innerHTML = "";
+
+    document.getElementById("tryAgainBtn")
+        .style.display = "none";
+
+    document.getElementById("answer").focus();
+
+}
+
+
+function saveScore() {
+
+    let score =
+        Number(localStorage.getItem("score")) || 0;
+
+    score += 10;
+
+    localStorage.setItem("score", score);
+
+}
+
+
+function markUsed() {
+
+    let used =
+        JSON.parse(
+            localStorage.getItem("usedNumbers")
+        ) || [];
+
+    if (!used.includes(2)) {
+
+        used.push(2);
+
+        localStorage.setItem(
+            "usedNumbers",
+            JSON.stringify(used)
+        );
+
+    }
+
+}
+
+</script>
+<script src="music.js"></script>
+
+</body>
+</html>
+

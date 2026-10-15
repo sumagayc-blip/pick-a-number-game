@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pick a Number Quiz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <p class="small-title">
+                CLASSROOM CHALLENGE
+            </p>
+
+            <h1>
+                🎯 PICK A NUMBER
+            </h1>
+
+            <p class="subtitle">
+                Choose a number to reveal its hidden question!
+            </p>
+
+        </div>
+
+
+        <!-- SCORE -->
+
+        <div class="score-box">
+
+            🏆 SCORE:
+            <span id="score">0</span>
+
+        </div>
+
+
+        <!-- NUMBER BOARD -->
+
+        <div class="number-board">
+
+            <a href="question1.html"
+               class="number-card"
+               data-number="1">
+
+                <span>01</span>
+
+            </a>
+
+
+            <a href="question2.html"
+               class="number-card"
+               data-number="2">
+
+                <span>02</span>
+
+            </a>
+
+
+            <a href="question3.html"
+               class="number-card"
+               data-number="3">
+
+                <span>03</span>
+
+            </a>
+
+
+            <a href="question4.html"
+               class="number-card"
+               data-number="4">
+
+                <span>04</span>
+
+            </a>
+
+
+            <a href="question5.html"
+               class="number-card"
+               data-number="5">
+
+                <span>05</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- MUSIC -->
+
+        <button
+            id="musicBtn"
+            class="music-btn"
+            type="button"
+            onclick="toggleMusic()"
+            aria-pressed="false">
+
+            🔊 MUSIC
+
+        </button>
+
+
+        <!-- RESET -->
+
+        <button
+            class="reset-btn"
+            onclick="resetGame()">
+
+            🔄 RESET GAME
+
+        </button>
+
+
+        <p class="instruction">
+
+            💡 Pick a number and answer the hidden question!
+
+        </p>
+
+    </div>
+
+
+    <!-- BACKGROUND MUSIC -->
+
+
+
+
+    <script src="music.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
